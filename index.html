@@ -5,8 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#080808">
-  <meta name="description" content="Saif — a personal space on the internet.">
-  <title>SAIF — Digital Space</title>
+  <meta name="description" content="Saif's personal space on the internet.">
+  <title>SAIF — Personal Space</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,7 +22,6 @@
     :root {
       color-scheme: dark;
       --bg: #080808;
-      --panel: #101010;
       --border: #292929;
       --silver: #e5e5e5;
       --muted: #858585;
@@ -52,7 +51,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 38px;
+      margin-bottom: 42px;
       color: var(--muted);
       font-size: 10px;
       letter-spacing: 2px;
@@ -79,33 +78,11 @@
       margin-bottom: 32px;
     }
 
-    .monogram {
-      width: 82px;
-      height: 82px;
-      margin: 0 auto 23px;
-      display: grid;
-      place-items: center;
-      border: 1px solid #555;
-      border-radius: 24px;
-      background: linear-gradient(145deg, #252525, #0c0c0c);
-      color: #f4f4f4;
-      font-size: 29px;
-      font-weight: 800;
-      letter-spacing: -2px;
-      box-shadow: 0 12px 40px #0008;
-      transition: transform .3s, border-color .3s;
-    }
-
-    .monogram:hover {
-      transform: rotate(-5deg) scale(1.06);
-      border-color: #aaa;
-    }
-
     h1 {
-      font-size: clamp(30px, 8vw, 38px);
+      font-size: clamp(32px, 8vw, 40px);
       font-weight: 800;
-      letter-spacing: 8px;
-      padding-left: 8px;
+      letter-spacing: 9px;
+      padding-left: 9px;
     }
 
     .subtitle {
@@ -125,7 +102,7 @@
 
     .clock-card {
       padding: 19px;
-      margin-bottom: 24px;
+      margin-bottom: 27px;
       text-align: center;
       border: 1px solid var(--border);
       border-radius: 17px;
@@ -182,8 +159,10 @@
       background: linear-gradient(110deg, #151515, #0d0d0d);
       border: 1px solid var(--border);
       border-radius: 14px;
-      transition: transform .25s, border-color .25s,
-                  background .25s;
+      transition:
+        transform .25s,
+        border-color .25s,
+        background .25s;
     }
 
     .link:hover {
@@ -211,6 +190,10 @@
 
     .link-info {
       flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
       min-width: 0;
     }
 
@@ -219,11 +202,10 @@
       font-weight: 600;
     }
 
-    .link-detail {
-      margin-top: 4px;
+    .link-note {
       color: var(--muted);
       font-size: 11px;
-      overflow-wrap: anywhere;
+      text-align: right;
     }
 
     .arrow {
@@ -234,24 +216,31 @@
 
     .link:hover .arrow {
       color: #fff;
-      transform: translateX(3px);
+      transform: translate(3px, -2px);
     }
 
     footer {
       margin-top: 36px;
       text-align: center;
-      color: #555;
+      color: #777;
       font-size: 10px;
       letter-spacing: 2px;
+      text-transform: uppercase;
     }
 
     footer span {
-      color: #aaa;
+      color: #e5e5e5;
     }
 
     @keyframes appear {
-      from { opacity: 0; transform: translateY(18px); }
-      to { opacity: 1; transform: translateY(0); }
+      from {
+        opacity: 0;
+        transform: translateY(18px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     @keyframes pulse {
@@ -272,7 +261,7 @@
   <main class="container">
 
     <div class="topline">
-      <span>PERSONAL SPACE / 001</span>
+      <span>PERSONAL SPACE / 002</span>
       <div class="status">
         <span class="dot"></span>
         <span>ONLINE</span>
@@ -280,7 +269,6 @@
     </div>
 
     <header class="profile">
-      <div class="monogram">S.</div>
       <h1>SAIF</h1>
       <p class="subtitle">Somewhere on the internet.</p>
       <p class="bio">
@@ -299,26 +287,29 @@
 
     <nav class="links" aria-label="Social links">
 
+      <!-- X -->
       <a class="link"
          href="https://x.com/2_t0o"
          target="_blank"
-         rel="noopener noreferrer">
+         rel="noopener noreferrer"
+         aria-label="Visit Saif on X">
         <span class="icon">
           <svg viewBox="0 0 24 24" aria-hidden="true">
             <path d="M18.9 2H22l-6.8 7.8L23.2 22h-6.3l-5-7.1L5.7 22H2.5l7.3-8.4L1.8 2h6.4l4.5 6.6L18.9 2Zm-1.1 18h1.7L7.3 3.9H5.5L17.8 20Z"/>
           </svg>
         </span>
         <span class="link-info">
-          <span class="link-name">X / Twitter</span>
-          <span class="link-detail">@2_t0o</span>
+          <span class="link-name">X</span>
         </span>
         <span class="arrow">↗</span>
       </a>
 
+      <!-- Instagram -->
       <a class="link"
          href="https://instagram.com/ssaifalghamdi"
          target="_blank"
-         rel="noopener noreferrer">
+         rel="noopener noreferrer"
+         aria-label="Visit Saif on Instagram">
         <span class="icon">
           <svg viewBox="0 0 24 24" aria-hidden="true">
             <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2.2A2.8 2.8 0 0 0 4.2 7v10A2.8 2.8 0 0 0 7 19.8h10a2.8 2.8 0 0 0 2.8-2.8V7A2.8 2.8 0 0 0 17 4.2H7Zm5 2.3a5.5 5.5 0 1 1 0 11 5.5 5.5 0 0 1 0-11Zm0 2.2a3.3 3.3 0 1 0 0 6.6 3.3 3.3 0 0 0 0-6.6Zm5.7-3.1a1.3 1.3 0 1 1 0 2.6 1.3 1.3 0 0 1 0-2.6Z"/>
@@ -326,13 +317,14 @@
         </span>
         <span class="link-info">
           <span class="link-name">Instagram</span>
-          <span class="link-detail">@ssaifalghamdi</span>
         </span>
         <span class="arrow">↗</span>
       </a>
 
+      <!-- Email -->
       <a class="link"
-         href="mailto:for.contact.saif@gmail.com">
+         href="mailto:for.contact.saif@gmail.com"
+         aria-label="Email Saif">
         <span class="icon">
           <svg viewBox="0 0 24 24" aria-hidden="true">
             <path d="M3 4h18a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Zm9 9L3 7v11h18V7l-9 6Zm0-2.5L20.2 6H3.8l8.2 4.5Z"/>
@@ -340,15 +332,17 @@
         </span>
         <span class="link-info">
           <span class="link-name">Email</span>
-          <span class="link-detail">for.contact.saif@gmail.com</span>
+          <span class="link-note">Keep in touch</span>
         </span>
         <span class="arrow">↗</span>
       </a>
 
+      <!-- GitHub -->
       <a class="link"
          href="https://github.com/themanwhowins"
          target="_blank"
-         rel="noopener noreferrer">
+         rel="noopener noreferrer"
+         aria-label="Visit Saif on GitHub">
         <span class="icon">
           <svg viewBox="0 0 24 24" aria-hidden="true">
             <path d="M12 .9a11.1 11.1 0 0 0-3.5 21.6c.6.1.8-.3.8-.6v-2.1c-3.3.7-4-1.4-4-1.4-.5-1.3-1.3-1.6-1.3-1.6-1.1-.8.1-.8.1-.8 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.6-.3-5.3-1.3-5.3-5.8 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.2 1.2a11 11 0 0 1 5.8 0c2.2-1.5 3.2-1.2 3.2-1.2.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.5-2.7 5.5-5.3 5.8.4.4.8 1 .8 2v3.3c0 .3.2.7.8.6A11.1 11.1 0 0 0 12 .9Z"/>
@@ -356,7 +350,6 @@
         </span>
         <span class="link-info">
           <span class="link-name">GitHub</span>
-          <span class="link-detail">themanwhowins</span>
         </span>
         <span class="arrow">↗</span>
       </a>
@@ -364,7 +357,7 @@
     </nav>
 
     <footer>
-      DESIGNED IN <span>THE DIGITAL VOID</span> · © <span id="year"></span>
+      MADE BY <span>SAIF</span>
     </footer>
 
   </main>
@@ -396,12 +389,6 @@
 
     updateClock();
     setInterval(updateClock, 1000);
-
-    document.getElementById('year').textContent =
-      new Intl.DateTimeFormat('en', {
-        timeZone: timezone,
-        year: 'numeric'
-      }).format(new Date());
   </script>
 </body>
 </html>
