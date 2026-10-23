@@ -143,22 +143,27 @@
       text-transform: uppercase;
     }
 
+    /* Two-by-two social card layout */
     .links {
       display: grid;
-      gap: 11px;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
     }
 
     .link {
-      min-height: 64px;
-      padding: 0 18px;
+      min-width: 0;
+      min-height: 145px;
+      padding: 18px;
       display: flex;
-      align-items: center;
-      gap: 14px;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 20px;
       text-decoration: none;
       color: var(--silver);
-      background: linear-gradient(110deg, #151515, #0d0d0d);
+      background: linear-gradient(135deg, #171717, #0d0d0d);
       border: 1px solid var(--border);
-      border-radius: 14px;
+      border-radius: 16px;
       transition:
         transform .25s,
         border-color .25s,
@@ -166,57 +171,57 @@
     }
 
     .link:hover {
-      transform: translateY(-3px);
+      transform: translateY(-4px);
       border-color: #777;
       background: #1b1b1b;
     }
 
     .icon {
-      width: 35px;
-      height: 35px;
+      width: 43px;
+      height: 43px;
       display: grid;
       place-items: center;
-      border: 1px solid #303030;
-      border-radius: 10px;
+      border: 1px solid #353535;
+      border-radius: 12px;
       color: #eee;
+      background: #ffffff05;
       flex-shrink: 0;
+      transition:
+        border-color .25s,
+        background .25s;
+    }
+
+    .link:hover .icon {
+      border-color: #666;
+      background: #ffffff0a;
     }
 
     .icon svg {
-      width: 19px;
-      height: 19px;
+      width: 23px;
+      height: 23px;
       fill: currentColor;
     }
 
     .link-info {
-      flex: 1;
       display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 10px;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 7px;
       min-width: 0;
+      width: 100%;
     }
 
     .link-name {
-      font-size: 13px;
+      font-size: 14px;
       font-weight: 600;
     }
 
     .link-note {
       color: var(--muted);
-      font-size: 11px;
-      text-align: right;
-    }
-
-    .arrow {
-      color: #666;
-      font-size: 18px;
-      transition: transform .25s, color .25s;
-    }
-
-    .link:hover .arrow {
-      color: #fff;
-      transform: translate(3px, -2px);
+      font-size: 10px;
+      line-height: 1.5;
+      text-align: left;
+      overflow-wrap: anywhere;
     }
 
     footer {
@@ -246,6 +251,17 @@
     @keyframes pulse {
       0%, 100% { opacity: 1; }
       50% { opacity: .35; }
+    }
+
+    @media (max-width: 360px) {
+      .link {
+        padding: 14px;
+        min-height: 138px;
+      }
+
+      .link-note {
+        font-size: 9px;
+      }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -300,8 +316,8 @@
         </span>
         <span class="link-info">
           <span class="link-name">X</span>
+          <span class="link-note">Less noise. More signal.</span>
         </span>
-        <span class="arrow">↗</span>
       </a>
 
       <!-- Instagram -->
@@ -317,8 +333,8 @@
         </span>
         <span class="link-info">
           <span class="link-name">Instagram</span>
+          <span class="link-note">Life in pixels.</span>
         </span>
-        <span class="arrow">↗</span>
       </a>
 
       <!-- Email -->
@@ -332,9 +348,8 @@
         </span>
         <span class="link-info">
           <span class="link-name">Email</span>
-          <span class="link-note">Keep in touch</span>
+          <span class="link-note">Ping me anytime.</span>
         </span>
-        <span class="arrow">↗</span>
       </a>
 
       <!-- GitHub -->
@@ -350,8 +365,8 @@
         </span>
         <span class="link-info">
           <span class="link-name">GitHub</span>
+          <span class="link-note">Built, not imagined.</span>
         </span>
-        <span class="arrow">↗</span>
       </a>
 
     </nav>
